@@ -84,4 +84,24 @@ public class Vendor
     public void setDistance(int distance) {
         this.distance = distance;
     }
+
+    public String getCategoryDisplayName()
+    {
+        String category = "[" + this.getCategory() + "]";
+        String displayName = " " + this.getDisplayName();
+
+        String join = category + displayName;
+
+        return join;
+    }
+
+    public String getLocationDistance()
+    {
+        String location = this.getCurrentLocation() + ", ";
+        String distance = this.getDistance() + " meter";
+
+        String join = location + distance;
+
+        return join;
+    }
 }

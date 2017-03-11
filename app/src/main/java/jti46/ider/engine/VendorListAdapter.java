@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,11 @@ public class VendorListAdapter extends BaseAdapter
 
     private Context context;
     private ArrayList<Vendor> data;
+
+    private TextView txvVendorUsername;
+    private TextView txvVendorCategoryDisplayName;
+    private TextView txvVendorStatus;
+    private TextView txvVendorLocationDistance;
 
     public VendorListAdapter(Context context, ArrayList<Vendor> data)
     {
@@ -65,11 +71,19 @@ public class VendorListAdapter extends BaseAdapter
 
     private void initComponents(View view)
     {
-
+        this.txvVendorUsername = (TextView) view.findViewById(R.id.txv_vendor_username);
+        this.txvVendorCategoryDisplayName = (TextView) view.findViewById(R.id.txv_vendor_category_display_name);
+        this.txvVendorStatus = (TextView) view.findViewById(R.id.txv_vendor_status);
+        this.txvVendorLocationDistance = (TextView) view.findViewById(R.id.txv_vendor_location_distance);
     }
 
     private void fillComponents(int position)
     {
+        Vendor vendor = this.getItem(position);
 
+        this.txvVendorUsername.setText(vendor.getUsername());
+        this.txvVendorCategoryDisplayName.setText(vendor.getCategoryDisplayName());
+        this.txvVendorStatus.setText(vendor.getStatus());
+        this.txvVendorLocationDistance.setText(vendor.getLocationDistance());
     }
 }
