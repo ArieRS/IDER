@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+                tools:context=".VendorDashboardActivity">
+    <TextView
+        android:id="@+id/tvNamaPelanggan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Pelanggan"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/tvCatatanPelanggan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="catatan"
+        android:textSize="15dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/tvNamaPelanggan"/>
+    <TextView
+        android:id="@+id/tvTotalHarga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp. 5.000.000"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignParentRight="true"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@+id/tvCatatanPelanggan"
+        android:background="@color/colorLightGray"/>
+</RelativeLayout>
