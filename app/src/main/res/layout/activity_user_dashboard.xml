@@ -88,7 +88,7 @@
                         android:layout_weight="60"
                         android:background="@color/colorLightGray"
                         android:layout_margin="4dp"
-                        android:id="@+id/map_places" />
+                        android:id="@+id/map_vendor_locations" />
 
                     <include
                         android:layout_width="match_parent"
