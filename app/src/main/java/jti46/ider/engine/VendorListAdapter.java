@@ -2,6 +2,7 @@ package jti46.ider.engine;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -126,7 +127,10 @@ public class VendorListAdapter extends BaseAdapter implements View.OnClickListen
 
         Button b = (Button) v;
 
-        if(b == this.btnPengen)
+        //Log.d("Tes", "B: " + b.toString());
+        //Log.d("Tes", "btnPengen: " + this.btnPengen.toString());
+
+        if(b.getText().equals(this.btnPengen.getText()))
         {
             this.actionListener.OnPengenButtonClicked(this.getItem(currentPosition));
         }

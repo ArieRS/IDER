@@ -119,7 +119,9 @@ public class UserDashboardActivity extends AppCompatActivity implements
     @Override
     public void OnPengenButtonClicked(Vendor selectedVendor)
     {
+        Intent i = new Intent(this, MapsActivity.class);
 
+        this.startActivity(i);
     }
 
     @Override
