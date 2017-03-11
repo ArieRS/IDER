@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_splashscreen"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    tools:context="jti46.ider.SplashscreenActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_splashscreen"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                tools:context="jti46.ider.SplashscreenActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aplikasi IDER"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:layout_above="@+id/splashscreen"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:id="@+id/splashscreen"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo_ider2"
+        />
 
-<ImageView
-    android:id="@+id/splashscreen"
-    android:layout_width="wrap_content"
-    android:layout_height="fill_parent"
-    android:src="@drawable/splash"
-    android:layout_gravity="center"
-    android:scaleType="centerCrop"
-    />
-
-<TextView
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:text="Hello World, splash"/>
-
-</LinearLayout>
+</RelativeLayout>
