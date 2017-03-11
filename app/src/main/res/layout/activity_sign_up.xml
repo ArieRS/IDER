@@ -21,8 +21,8 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginTop="140dp"
-        android:src="@drawable/logo_ider2"
         android:background="@color/colorhint"
+        android:src="@drawable/logo_ider2"
         />
 
 
@@ -136,7 +136,7 @@
             android:background="#dad8d8"/>
 
 
-        <customfonts.MyTextView
+        <TextView
 
             android:id="@+id/signup1"
             android:layout_width="match_parent"
@@ -174,10 +174,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="22dp"
+        android:background="#2b73e1"
         android:gravity="center"
         android:lines="1"
         android:text="Signin here"
-        android:background="#2b73e1"
         android:textColor="@color/colorwhite"
 
         />
