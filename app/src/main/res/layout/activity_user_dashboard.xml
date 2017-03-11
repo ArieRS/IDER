@@ -16,7 +16,7 @@
         android:layout_height="0dp"
         android:layout_weight="10"
         android:layout_width="match_parent"
-        android:background="@color/colorAccent"
+        android:background="@color/colorLightGray"
         android:orientation="horizontal"
         android:weightSum="100">
 
@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="90"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorwhite"
         android:id="@+id/tbh_main">
 
         <LinearLayout
@@ -71,7 +71,9 @@
                     <ListView
                         android:id="@+id/lst_vendors"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"></ListView>
+                        android:layout_height="match_parent">
+
+                    </ListView>
 
                 </LinearLayout>
 
