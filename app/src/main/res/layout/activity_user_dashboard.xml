@@ -4,10 +4,10 @@
     android:id="@+id/activity_user_dashboard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="8dp"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
-    android:paddingTop="8dp"
+    android:paddingBottom="4dp"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:paddingTop="4dp"
     android:orientation="vertical"
     android:weightSum="100"
     tools:context="jti46.ider.UserDashboardActivity">
@@ -22,17 +22,19 @@
 
         <EditText
             android:layout_width="0dp"
-            android:layout_weight="33"
-            android:layout_height="match_parent" />
+            android:layout_weight="40"
+            android:layout_height="match_parent"
+            android:hint="Ingin apa?"/>
 
         <Spinner
             android:layout_width="0dp"
-            android:layout_weight="33"
-            android:layout_height="match_parent" />
+            android:layout_weight="40"
+            android:layout_height="match_parent"
+            android:id="@+id/spnr_categories"/>
 
         <Button
             android:layout_width="0dp"
-            android:layout_weight="33"
+            android:layout_weight="20"
             android:layout_height="match_parent"
             android:text="Cari"/>
 
@@ -65,6 +67,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
+                    <ListView
+                        android:id="@+id/lst_vendors"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"></ListView>
 
                 </LinearLayout>
 
