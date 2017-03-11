@@ -1,5 +1,6 @@
 package jti46.ider;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,8 @@ import java.util.List;
 import jti46.ider.engine.Vendor;
 import jti46.ider.engine.VendorListAdapter;
 
-public class UserDashboardActivity extends AppCompatActivity implements AdapterView.OnItemClickListener
+public class UserDashboardActivity extends AppCompatActivity implements
+        AdapterView.OnItemClickListener, VendorListAdapter.VendorListAdapterActionListener
 {
 
     private static final String TAB_LIST_TITLE = "DAFTAR";
@@ -112,5 +114,19 @@ public class UserDashboardActivity extends AppCompatActivity implements AdapterV
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+    }
+
+    @Override
+    public void OnPengenButtonClicked(Vendor selectedVendor)
+    {
+
+    }
+
+    @Override
+    public void OnPesenButtonClicked(Vendor selectedVendor)
+    {
+        Intent i = new Intent(this, VendorDetailActivity.class);
+
+        this.startActivity(i);
     }
 }

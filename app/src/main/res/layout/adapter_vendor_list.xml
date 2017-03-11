@@ -68,7 +68,8 @@
                 android:layout_weight="50"
                 android:layout_height="wrap_content"
                 android:text="Pengen"
-                android:id="@+id/btn_pengen"/>
+                android:id="@+id/btn_pengen"
+                android:onClick="button_onCLick"/>
 
             <Button
                 android:layout_width="0dp"
