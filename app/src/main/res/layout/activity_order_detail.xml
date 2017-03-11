@@ -33,7 +33,7 @@
         android:id="@+id/textView20" />
 
     <TextView
-        android:text="@ Rp."
+        android:text="Rp."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView20"
