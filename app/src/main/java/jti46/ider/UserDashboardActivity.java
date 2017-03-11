@@ -5,9 +5,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -26,7 +26,6 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import jti46.ider.engine.UtilityHelper;
 import jti46.ider.engine.Vendor;
@@ -54,8 +53,7 @@ public class UserDashboardActivity extends AppCompatActivity implements
     private Marker currentMarker;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
 
@@ -64,8 +62,7 @@ public class UserDashboardActivity extends AppCompatActivity implements
         this.initComponents();
     }
 
-    private void initComponents()
-    {
+    private void initComponents() {
         this.tbhMain = (TabHost) this.findViewById(R.id.tbh_main);
         this.lnrTabList = (LinearLayout) this.findViewById(R.id.lnr_tab_list);
         this.lnrTabLocation = (LinearLayout) this.findViewById(R.id.lnr_tab_location);
@@ -79,15 +76,13 @@ public class UserDashboardActivity extends AppCompatActivity implements
         this.setupTabs();
     }
 
-    private void setupMap()
-    {
+    private void setupMap() {
         // Setup MapView
         this.mapVendorLocations.onCreate(this.appBundle);
         this.mapVendorLocations.getMapAsync(this);
     }
 
-    private void setupListView()
-    {
+    private void setupListView() {
         VendorListAdapter adapter = new VendorListAdapter(this, this.vendorList());
 
         this.lstVendors.setAdapter(adapter);
@@ -95,16 +90,14 @@ public class UserDashboardActivity extends AppCompatActivity implements
         this.lstVendors.setOnItemClickListener(this);
     }
 
-    private void setupSpinner()
-    {
+    private void setupSpinner() {
         ArrayAdapter<String> categoriesAdapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, this.categoryList());
 
         this.spnrCategories.setAdapter(categoriesAdapter);
     }
 
-    private void setupTabs()
-    {
+    private void setupTabs() {
         this.tbhMain.setup();
 
         TabHost.TabSpec listSpec = this.tbhMain.newTabSpec(UserDashboardActivity.TAB_LIST_TITLE);
@@ -119,8 +112,7 @@ public class UserDashboardActivity extends AppCompatActivity implements
         this.tbhMain.addTab(locationSpec);
     }
 
-    private ArrayList<String> categoryList()
-    {
+    private ArrayList<String> categoryList() {
         ArrayList<String> categories = new ArrayList<>();
 
         categories.add("Semua");
@@ -134,8 +126,7 @@ public class UserDashboardActivity extends AppCompatActivity implements
         return categories;
     }
 
-    private ArrayList<Vendor> vendorList()
-    {
+    private ArrayList<Vendor> vendorList() {
         ArrayList<Vendor> vendors = new ArrayList<>();
 
         vendors.add(new Vendor(1, "cakkhoir87", "Bakso", "Cakman Khoiri", "Bakso enak murah mantap nikmat", "Jl. Tombro", 600));
@@ -151,23 +142,20 @@ public class UserDashboardActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void OnPengenButtonClicked(Vendor selectedVendor)
-    {
+    public void OnPengenButtonClicked(Vendor selectedVendor) {
         Intent i = new Intent(this, MapsActivity.class);
 
         this.startActivity(i);
     }
 
     @Override
-    public void OnPesenButtonClicked(Vendor selectedVendor)
-    {
+    public void OnPesenButtonClicked(Vendor selectedVendor) {
         Intent i = new Intent(this, VendorDetailActivity.class);
 
         this.startActivity(i);
     }
 
-    private boolean checkLocationAccessPermission()
-    {
+    private boolean checkLocationAccessPermission() {
         boolean fineLocationGranted = ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
 
@@ -179,20 +167,17 @@ public class UserDashboardActivity extends AppCompatActivity implements
         return allIsGranted;
     }
 
-    private LatLng currentPosition()
-    {
+    private LatLng currentPosition() {
         LatLng position = null;
 
         if (this.locationManager == null)
             this.locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
 
-        if(this.checkLocationAccessPermission())
-        {
+        if (this.checkLocationAccessPermission()) {
             Location location = this.locationManager.getLastKnownLocation(
                     LocationManager.NETWORK_PROVIDER);
 
-            if(location != null)
-            {
+            if (location != null) {
                 double latitude = location.getLatitude();
                 double longitude = location.getLongitude();
 
@@ -210,8 +195,7 @@ public class UserDashboardActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap)
-    {
+    public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
         this.googleMap.setOnMapClickListener(this);
 
@@ -220,7 +204,7 @@ public class UserDashboardActivity extends AppCompatActivity implements
 
         LatLng position = this.currentPosition();
 
-        if(position == null)
+        if (position == null)
             position = new LatLng(21, 57);
 
         this.zoomToPosition(position);
@@ -228,16 +212,14 @@ public class UserDashboardActivity extends AppCompatActivity implements
         this.currentMarker = this.addMarker(position, "You are here");
     }
 
-    private void zoomToPosition(LatLng position)
-    {
+    private void zoomToPosition(LatLng position) {
         float zoomLevel = 12.0f;
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, zoomLevel);
 
         this.googleMap.moveCamera(cameraUpdate);
     }
 
-    private Marker addMarker(LatLng position, String title)
-    {
+    private Marker addMarker(LatLng position, String title) {
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(position);
 
@@ -250,9 +232,8 @@ public class UserDashboardActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onMapClick(LatLng latLng)
-    {
-        if(this.currentMarker != null)
+    public void onMapClick(LatLng latLng) {
+        if (this.currentMarker != null)
             this.currentMarker.remove();
 
         this.currentMarker = this.addMarker(latLng, "Add Place Here..");
