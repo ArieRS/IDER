@@ -79,7 +79,21 @@
                     android:id="@+id/lnr_tab_location"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:weightSum="100">
+
+                    <com.google.android.gms.maps.MapView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="60"
+                        android:background="@color/colorPrimary"
+                        android:id="@+id/map_places" />
+
+                    <include
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="40"
+                        layout="@layout/adapter_vendor_list" />
 
                 </LinearLayout>
 
