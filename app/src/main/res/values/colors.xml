@@ -6,4 +6,14 @@
     <color name="colortext">#100b20</color>
     <color name="colorhint">#a9aaac</color>
     <color name="colorwhite">#ffffff</color>
+    <color name="gold">#ff9800</color>
+    <color name="colorreviewtext">#696d6f</color>
+    <color name="colorgreen">#06bebd</color>
+    <!--<color name="colorbar">#2c3239</color>-->
+    <!--<color name="colorbackground">#f2f3f4</color>-->
+    <!--<color name="colorblack">#000</color>-->
+    <!--<color name="colorblue">#2196f3</color>-->
+    <!--<color name="ratingbar">#ff9800</color>-->
+    <!--<color name="colortitletext">#3c4350</color>-->
+    <!--<color name="colorheadtext">#696d6f</color>-->
 </resources>
