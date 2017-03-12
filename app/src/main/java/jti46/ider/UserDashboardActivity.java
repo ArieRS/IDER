@@ -21,6 +21,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -46,7 +47,8 @@ public class UserDashboardActivity extends AppCompatActivity implements
     private ListView lstVendors;
 
     private GoogleMap googleMap;
-    private MapView mapVendorLocations;
+    //private MapView mapVendorLocations;
+    private SupportMapFragment mapVendorLocations;
 
     // Others
     private LocationManager locationManager;
@@ -68,7 +70,9 @@ public class UserDashboardActivity extends AppCompatActivity implements
         this.lnrTabLocation = (LinearLayout) this.findViewById(R.id.lnr_tab_location);
         this.spnrCategories = (Spinner) this.findViewById(R.id.spnr_categories);
         this.lstVendors = (ListView) this.findViewById(R.id.lst_vendors);
-        this.mapVendorLocations = (MapView) this.findViewById(R.id.map_vendor_locations);
+        //this.mapVendorLocations = (MapView) this.findViewById(R.id.map_vendor_locations);
+        this.mapVendorLocations = (SupportMapFragment) this.getSupportFragmentManager()
+                .findFragmentById(R.id.map_vendor_locations);
 
         this.setupMap();
         this.setupListView();
@@ -78,7 +82,7 @@ public class UserDashboardActivity extends AppCompatActivity implements
 
     private void setupMap() {
         // Setup MapView
-        this.mapVendorLocations.onCreate(this.appBundle);
+        //this.mapVendorLocations.onCreate(this.appBundle);
         this.mapVendorLocations.getMapAsync(this);
     }
 
@@ -195,7 +199,8 @@ public class UserDashboardActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(GoogleMap googleMap)
+    {
         this.googleMap = googleMap;
         this.googleMap.setOnMapClickListener(this);
 
