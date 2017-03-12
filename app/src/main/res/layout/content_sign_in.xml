@@ -46,13 +46,13 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="46dp"
             android:background="#0000"
             android:gravity="left"
-            android:hint="Email"
+            android:hint="username"
             android:maxLength="12"
             android:padding="16dp"
             android:textColor="@color/colortext"

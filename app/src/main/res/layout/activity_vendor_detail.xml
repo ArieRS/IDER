@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_vendor_detail"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="4dp"
-    android:paddingLeft="4dp"
-    android:paddingRight="4dp"
-    android:paddingTop="4dp"
-    android:orientation="vertical"
-    android:weightSum="100"
-    tools:context="jti46.ider.VendorDetailActivity">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/activity_vendor_detail"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingBottom="4dp"
+              android:paddingLeft="4dp"
+              android:paddingRight="4dp"
+              android:paddingTop="4dp"
+              android:weightSum="100"
+              tools:context="jti46.ider.VendorDetailActivity">
 
 
     <include
+        layout="@layout/adapter_vendor_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="30"
-        layout="@layout/adapter_vendor_list" />
-    
+        android:layout_weight="30"/>
+
     <ListView
         android:id="@+id/lst_commodities"
         android:layout_width="match_parent"
@@ -26,18 +26,18 @@
         android:layout_weight="53"></ListView>
 
     <LinearLayout
-        android:background="@color/colorLightGray"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="18"
-        android:weightSum="100"
-        android:orientation="horizontal">
+        android:background="@color/colorLightGray"
+        android:orientation="horizontal"
+        android:weightSum="100">
 
         <LinearLayout
-            android:background="@color/colorAccent"
             android:layout_width="0dp"
-            android:layout_weight="70"
             android:layout_height="match_parent"
+            android:layout_weight="70"
+            android:background="@color/colorPrimary"
             android:orientation="vertical"
             android:padding="4dp">
 
@@ -45,44 +45,50 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TOTAL"
+                android:textColor="@color/colorwhite"
                 android:textSize="18dp"
                 android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pesan untuk penjual:"/>
+                android:text="Pesan untuk penjual:"
+                android:textColor="@color/colorwhite"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ketikkan pesan Anda disini.."/>
+                android:hint="Ketikkan pesan Anda disini.."
+                android:textColorHint="@color/colorwhite"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:background="@color/colorgreen"
             android:layout_width="0dp"
-            android:layout_weight="30"
-            android:orientation="vertical"
             android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:background="@color/colorLightGray"
+            android:orientation="vertical"
             android:padding="4dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rp. 000,00"
+                android:textColor="#000000"
                 android:textSize="20dp"
                 android:textStyle="bold"/>
 
             <Button
-                android:layout_marginTop="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="PESEN!"/>
+                android:layout_marginTop="4dp"
+                android:background="@color/colorreviewtext"
+                android:text="PESEN!"
+                android:textColor="@color/colorwhite"/>
 
         </LinearLayout>
 
     </LinearLayout>
-    
+
 </LinearLayout>

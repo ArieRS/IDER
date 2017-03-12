@@ -23,11 +23,11 @@
         android:textSize="34dp"/>
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="200dp"
         android:src="@drawable/logo_ider2"
         android:background="@color/colorhint"/>
 

@@ -20,7 +20,6 @@ import android.widget.TextView;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -28,7 +27,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import jti46.ider.engine.UtilityHelper;
@@ -165,8 +163,10 @@ public class UserDashboardActivity extends AppCompatActivity implements
 
     private ArrayList<Vendor> vendorList()
     {
-        double[] lats = {-7.889985, -7.890085, -7.890185};
-        double[] longs = {112.630437, 112.630537, 112.630637};
+
+
+        double[] lats = {-7.960703, -7.975130, -7.976766};
+        double[] longs = {112.622288, 112.631308, 112.634011};
 
         ArrayList<Vendor> vendors = new ArrayList<>();
 
@@ -242,6 +242,7 @@ public class UserDashboardActivity extends AppCompatActivity implements
     {
         this.googleMap = googleMap;
         this.googleMap.setOnMapClickListener(this);
+        this.googleMap.setOnMarkerClickListener(this);
 
         this.googleMap.getUiSettings().setScrollGesturesEnabled(true);
         this.googleMap.getUiSettings().setZoomControlsEnabled(true);

@@ -2,15 +2,18 @@ package jti46.ider.RetrofiApi;
 
 import jti46.ider.ModeLogin.Login;
 import retrofit2.Call;
-import retrofit2.http.GET;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.POST;
 
 /**
  * Created by alhamdulillah on 10/23/16.
  */
 
 public interface ApiInterface {
-    @GET("ider_user/login")
-    Call<Login> getPembelian();
+    @FormUrlEncoded
+    @POST("ider_user/login")
+    Call<Login> postLogin(@Field("nama") String nama, @Field("password") String password);
 
 //    @GET("pembelian/user")
 //    Call<GetPembelian> getPembelian();
