@@ -13,13 +13,15 @@ public class Vendor
     private String status;
     private String currentLocation;
     private int distance;
+    private double latitude;
+    private double longitude;
 
     public Vendor()
     {
     }
 
     public Vendor(int id, String username, String category, String displayName, String status,
-                  String currentLocation, int distance) {
+                  String currentLocation, int distance, double latitiude, double longitude) {
         this.id = id;
         this.username = username;
         this.category = category;
@@ -27,6 +29,8 @@ public class Vendor
         this.status = status;
         this.currentLocation = currentLocation;
         this.distance = distance;
+        this.latitude = latitiude;
+        this.longitude = longitude;
     }
 
     public int getId() {
@@ -83,6 +87,22 @@ public class Vendor
 
     public void setDistance(int distance) {
         this.distance = distance;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public String getCategoryDisplayName()
